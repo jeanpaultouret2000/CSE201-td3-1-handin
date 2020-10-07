@@ -116,8 +116,8 @@ bool simulate_projectile(const double magnitude, const double angle,
 
 void sort(double *targets, const int num_targets) {
   // IMPLEMENT YOUR CODE HERE
-    for (int i=0;i<3*num_targets;i+=3){
-        for (int k=i+3;k<3*num_targets;k+=3)
+    for (int i=0;i<num_targets;i+=3){
+        for (int k=i+3;k<num_targets;k+=3)
             if(targets[i]>targets[k]){
                 double a=targets[i];
                 double b=targets[i+1];
@@ -143,7 +143,7 @@ void merge_telemetry(double **telemetries,
             telemetry=append_to_array(telemetries[i][j],telemetry,telemetry_current_size,telemetry_max_size);
         }
     }
-    sort(telemetry,telemetry_current_size);
+    sort(telemetry,telemetry_max_size);
 }
 
 
